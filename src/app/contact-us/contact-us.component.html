@@ -1,0 +1,89 @@
+<div class="container">
+
+  <div class="row" style="margin-top: 50px; ">
+    <div class="col-lg-4">
+      <div><i>“If you want to know more about our holiday packages, have a story to share or a question that has not been answered on our website, please get in touch with us via contact details listed below or fill in the form on the right.”</i></div>
+      <div>Contact details of Club7 offices</div>
+      <div></div>
+    </div>
+    <div class="col-lg-8">
+      <form [formGroup]="contact" >
+        <div class="form-group col-sm-10">
+          <label for="yourName">Your Name :</label>
+          <input type="text" class="form-control" formControlName="yourName" placeholder="Your Name">
+          <div class="has text-danger" *ngIf="contact.controls['yourName'].invalid && (contact.controls['yourName'].touched)">
+            <div [hidden]="!contact.controls['yourName'].errors.required">
+              Your Name Is Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-10">
+          <label for="email">Email :</label>
+          <input type="text" class="form-control" formControlName="email" placeholder="Email">
+          <div class="has text-danger" *ngIf="contact.controls['email'].invalid && (contact.controls['email'].touched)">
+            <div [hidden]="!contact.controls['email'].errors.required">
+              Email Is Required
+            </div>
+            <div [hidden]="!contact.controls['email'].errors.email">
+              Email Is Wrong
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-10">
+          <label for="yourMob">Your Mobile :</label>
+          <input type="number" class="form-control" formControlName="yourMob" placeholder="Mobile Number">
+          <div class="has text-danger" *ngIf="contact.controls['yourMob'].invalid && (contact.controls['yourMob'].touched)">
+            <div [hidden]="!contact.controls['yourMob'].errors.required">
+              Your Mobile Is Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-10">
+          <label for="location">Your Location :</label>
+          <input type="text" class="form-control" formControlName="location" placeholder="Location">
+          <div class="has text-danger" *ngIf="contact.controls['location'].invalid && (contact.controls['location'].touched)">
+            <div [hidden]="!contact.controls['location'].errors.required">
+              Location Is Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-10">
+          <label for="enquiry_for">Enquiry For :</label>
+          <input type="text" class="form-control" formControlName="enquiry_for" placeholder="Enquiry For">
+          <div class="has text-danger" *ngIf="contact.controls['enquiry_for'].invalid && (contact.controls['enquiry_for'].touched)">
+            <div [hidden]="!contact.controls['enquiry_for'].errors.required">
+              Enquiry For Is Required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-10">
+          <label for="message">Message :</label>
+          <textarea type="text" class="form-control" formControlName="message" placeholder="Message"></textarea>     
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <button type="submit" class="btn btn-success" (click)="contactRecord()">Submit</button>
+        </div>
+        
+
+
+        <!-- <div class="form-group">
+          <label for="password">Password :</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <div class="has text-danger" *ngIf="contact.controls['password'].invalid && (contact.controls['password'].touched)">
+            <div [hidden]="!contact.controls['password'].errors.required">
+              Password Is Required
+            </div>
+            <div [hidden]="!contact.controls['password'].errors.minlength">
+              Min length must be greater than 3
+            </div>
+            <div [hidden]="!contact.controls['password'].errors.pattern">
+              Min 8 and max 16 in which min one Lower one Upper and one Number
+            </div>
+          </div>
+        </div> -->
+      </form>
+    </div>
+  </div>
+</div>
